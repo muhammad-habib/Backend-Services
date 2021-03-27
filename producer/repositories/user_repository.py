@@ -1,8 +1,6 @@
-from typing import Optional, Mapping
 from fastapi import Depends
 from repositories import AsyncIOMotorClient, get_database
 from motor.motor_asyncio import AsyncIOMotorClient
-
 from models.user import user_dict
 
 
