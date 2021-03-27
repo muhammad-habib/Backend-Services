@@ -16,7 +16,8 @@ class NotificationService:
     async def create_notification(self, notification: dict) -> dict:
         now = datetime.datetime.now()
         notification['created_at'] = now
-        return await self._notify_repo.create_notification(notification)
+        notification = await self._notify_repo.create_notification(notification)
+        return notification
 
     async def _random_string(self, str_len=70):
         return ''.join(random.choice(string.ascii_lowercase) for i in range(str_len))

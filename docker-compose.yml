@@ -8,6 +8,9 @@ services:
         - ./producer:/producer
       environment:
         - SERVICE_ENVIRONMENT=local
+      depends_on:
+        - rabbitmq
+        - mongo
   mongo:
     image: "mongo:4.0"
 
@@ -16,3 +19,6 @@ services:
     restart: always
     ports:
       - 5000:8081
+
+  rabbitmq:
+    image: "rabbitmq:3.8"
