@@ -22,3 +22,15 @@ services:
 
   rabbitmq:
     image: "rabbitmq:3.8"
+
+  notification:
+    build: "./notification"
+    ports:
+      - "6000:6000"
+    volumes:
+      - ./notification:/usr/src/app
+    environment:
+      - SERVICE_ENVIRONMENT=local
+    depends_on:
+      - mongo
+      - rabbitmq

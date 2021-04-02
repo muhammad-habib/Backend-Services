@@ -10,8 +10,8 @@ class NotificationRepository:
 
     async def get_notifications(self):
         notifications = []
-        async for user in self._db['notifications'].find():
-            notifications.append(notification_dict(user))
+        async for notification in self._db['notifications'].find():
+            notifications.append(notification_dict(notification))
         return notifications
 
     async def create_notification(self, notification: dict) -> dict:
