@@ -4,7 +4,6 @@ import {NotificationDoc} from "./notificationDoc";
 const NotificationSchema: Schema = new Schema({
     providers: { type: Array, required: true },
     body: { type: String, required: true },
-    data: { type: Object, required: true },
     receivers: { type: Array, required: true },
     created_at: { type: String, required: true }
 });

@@ -1,5 +1,8 @@
 version: "3.9"
 services:
+  rabbitmq:
+    image: "rabbitmq:3.8"
+
   producer:
       build: "./producer"
       ports:
@@ -20,9 +23,6 @@ services:
     ports:
       - 5000:8081
 
-  rabbitmq:
-    image: "rabbitmq:3.8"
-
   notification:
     build: "./notification"
     ports:
@@ -33,5 +33,5 @@ services:
     environment:
       - SERVICE_ENVIRONMENT=local
     depends_on:
-      - mongo
       - rabbitmq
+      - mongo
