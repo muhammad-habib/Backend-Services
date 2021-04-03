@@ -6,13 +6,13 @@ run `docker-compose up`
 
 ## Run Tests
 
-producer
+**producer**
 
-docker exec -it backend-services_producer_1 bash -c "pytest"
+`docker exec -it backend-services_producer_1 bash -c "pytest"`
 
-notification
+**notification**
 
-docker exec -it backend-services_notification_1 sh -c "npm run test"
+`docker exec -it backend-services_notification_1 sh -c "npm run test"`
 
 
 ## Available APIs And Docs
