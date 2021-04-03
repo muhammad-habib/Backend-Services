@@ -26,7 +26,6 @@ describe('User model', () => {
             email: 'dummy email',
             token: 'dummy token',
             created_at: 'dummy date',
-            updated_at: 'dummy date'
         });
         const spy = jest.spyOn(user, 'save');
         user.save();

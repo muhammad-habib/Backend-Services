@@ -1,7 +1,7 @@
 {
   "name": "notification",
   "version": "1.0.0",
-  "description": "",
+  "description": "notification service",
   "main": "index.ts",
   "scripts": {
     "server": "nodemon  index.ts",
