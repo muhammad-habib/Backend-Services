@@ -44,7 +44,7 @@ Notification body
     "body": "Hello from the other side",
     "receivers": ["5cc80b47e9db456789836abe"]
 }
-
+```
 
 in the console you will see logs of notifications
 
@@ -54,3 +54,14 @@ in the console you will see logs of notifications
 ![alt text](https://github.com/muhammad-habib/Backend-Services/blob/main/chart.jpg?raw=true)
 
 
+
+- when we send request to **producer service** which is responsible to save notification to DB and notify notification service via **rabitmq**  
+
+
+- **notification service**
+    - listen to reabitmq queue
+    - select messaeg from mongo
+    - load all message providers
+    - publish to them the message
+    - every Provider has throttled-queue to manage the rate limit
+    - send the notification
