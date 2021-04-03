@@ -51,5 +51,6 @@ in the console you will see logs of notifications
 ## Explanation
 
 
-![notification-chart](https://github.com/muhammad-habib/Backend-Services/blob/main/chart.jpg "notification chart")
+![alt text](https://github.com/muhammad-habib/Backend-Services/blob/main/chart.jpg?raw=true)
+
 
