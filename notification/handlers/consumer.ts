@@ -1,11 +1,13 @@
 import amqp from "amqplib/callback_api";
 import {getNotification} from "./message";
+import {rabbitmq} from "../config/rabbitmq";
+
 
 export class Consumer {
     that = this;
     connect() {
         // const that = this;
-        amqp.connect('amqp://rabbitmq', function (error, connection) {
+        amqp.connect('amqp://' + rabbitmq.host + "", function (error, connection) {
             if (error) {
                 throw error;
             }
@@ -13,7 +15,7 @@ export class Consumer {
                 if (error) {
                     throw error;
                 }
-                const queue = 'notifications_queue';
+                const queue = rabbitmq.queue;
 
                 channel.assertQueue(queue, {
                     durable: false
